@@ -1,0 +1,97 @@
+title :Handwritten Digit Classification
+version :v1.0
+purpose:**Handwritten Digit Classification Project Purpose**
+
+The purpose of this project is to build a machine learning model that can recognize handwritten digits from images and classify them into numbers from **0 to 9**.
+
+Example:
+If we give the model an image of handwritten digit `7`, the model should predict:
+
+```text
+Predicted digit: 7
+```
+
+**Simple Explanation**
+
+In real life, every person writes numbers in a different style. Some people write `1` straight, some write it with a curve. Some people write `8` clearly, while others write it close to `3`.
+
+This project teaches the computer to understand these different writing styles and correctly identify the digit.
+
+**Main Purpose**
+
+The main purpose is:
+
+> To train an image classification model that can read handwritten digit images and predict the correct digit class from 0 to 9.
+
+**Why This Project Is Important**
+
+This project is important because handwritten digit recognition is used in many real-world systems, such as:
+
+| Real-Life Use          | Example                          |
+| ---------------------- | -------------------------------- |
+| Bank cheque processing | Reading handwritten amounts      |
+| Postal services        | Reading ZIP/postal codes         |
+| Exam sheet checking    | Recognizing roll numbers         |
+| Form scanning          | Reading handwritten numbers      |
+| Digital note apps      | Converting handwriting into text |
+
+**Role of Pandas in This Project**
+
+Pandas is not used to classify the image directly. Pandas is used to manage the dataset.
+
+For example, Pandas can store:
+
+| image_path            | label |
+| --------------------- | ----- |
+| digit_images/img1.png | 5     |
+| digit_images/img2.png | 0     |
+| digit_images/img3.png | 8     |
+
+So Pandas helps in:
+
+1. Loading dataset information
+2. Managing image labels
+3. Creating CSV files
+4. Splitting data into training and testing
+5. Checking dataset balance
+
+**Project Input**
+
+The input is an image of a handwritten digit.
+
+Example:
+
+```text
+Image: handwritten number 4
+```
+
+**Project Output**
+
+The output is the predicted digit.
+
+Example:
+
+```text
+Prediction: 4
+```
+
+**Project Objectives**
+
+1. Collect handwritten digit images.
+2. Store image paths and labels using Pandas.
+3. Preprocess images by resizing and normalizing them.
+4. Train an image classification model.
+5. Test the model on new handwritten digit images.
+6. Check model accuracy.
+
+**Learning Outcome**
+
+After completing this project, you will learn:
+
+* How image classification works
+* How to use Pandas with image datasets
+* How to prepare training and testing data
+* How handwritten digit recognition works
+* How to evaluate model accuracy
+
+
