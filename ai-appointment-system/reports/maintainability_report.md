@@ -5,14 +5,14 @@
 | Metric | Value |
 | --- | --- |
 | Status | PASS |
-| Duration | 2.2586 seconds |
+| Duration | 2.6201 seconds |
 | Command | `C:\Users\Ali Jawad\AppData\Local\Programs\Python\Python313\python.exe -m pytest tests -q -p no:cacheprovider` |
 
 ## Pytest Output
 
 ```text
 ..........                                                               [100%]
-10 passed in 0.04s
+10 passed in 0.09s
 ```
 
 ## Maintainability Improvement

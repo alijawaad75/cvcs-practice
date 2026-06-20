@@ -17,7 +17,7 @@ Beginner-friendly AI/ML project for learning automated test maintainability.
 
 ```powershell
 cd D:\DDP_calculate\ai-appointment-system
-py -3 -m pytest tests -q
+py -3 -m pytest tests -q -p no:cacheprovider
 ```
 
 ## Measure Time And Build Report
@@ -52,3 +52,7 @@ Then open `frontend/appointment_form.html` in a browser.
 7. Improve karo by removing duplicated test data.
 8. Dobara change karke observe karo.
 
+## AI Agent Session
+
+For GitHub/Codex/Copilot agent sessions, use `AGENTS.md` as the project guide.
+It defines the safest workflow, maintainability rules, and required verification commands.
