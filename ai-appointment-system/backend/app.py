@@ -49,13 +49,25 @@ def handle_appointment_request(payload, db=None):
 
 
 class AppointmentRequestHandler(BaseHTTPRequestHandler):
+    database = None
+
     def _send_json(self, status, body):
         response = json.dumps(body).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
         self.send_header("Content-Length", str(len(response)))
         self.end_headers()
         self.wfile.write(response)
+
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
 
     def do_POST(self):
         if self.path != "/appointments":
@@ -69,8 +81,11 @@ class AppointmentRequestHandler(BaseHTTPRequestHandler):
             self._send_json(400, {"errors": {"body": "Request body must be valid JSON"}})
             return
 
-        result = handle_appointment_request(payload)
+        result = handle_appointment_request(payload, db=self.database)
         self._send_json(result["status"], result)
+
+    def log_message(self, format, *args):
+        return
 
 
 def run_server(host="127.0.0.1", port=8000):
@@ -82,4 +97,3 @@ def run_server(host="127.0.0.1", port=8000):
 
 if __name__ == "__main__":
     run_server()
-

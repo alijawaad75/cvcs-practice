@@ -1,13 +1,14 @@
 {
-  "measured_at": "2026-06-20T23:35:34",
-  "duration_seconds": 2.6201,
+  "measured_at": "2026-06-20T23:50:44",
+  "duration_seconds": 9.6102,
   "exit_code": 0,
-  "stdout": "..........                                                               [100%]\n10 passed in 0.09s",
+  "stdout": "...........                                                              [100%]\n11 passed in 5.45s",
   "stderr": "",
   "maintainability_notes": [
     "Phone rule lives in config/rules.py",
     "Shared valid and invalid examples live in test_data/test_data.py",
     "API test uses an in-memory database so tests stay fast and isolated",
-    "Model test checks behavior ranges instead of fragile exact internals"
+    "Model test checks behavior ranges instead of fragile exact internals",
+    "Playwright test verifies the frontend form can book through the backend API"
   ]
 }

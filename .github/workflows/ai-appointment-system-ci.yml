@@ -29,8 +29,11 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install test dependency
-        run: python -m pip install --upgrade pip pytest
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
 
       - name: Run tests
         run: python -m pytest tests -q -p no:cacheprovider
@@ -45,4 +48,3 @@ jobs:
           path: |
             ai-appointment-system/reports/maintainability_report.md
             ai-appointment-system/reports/test_run_result.json
-

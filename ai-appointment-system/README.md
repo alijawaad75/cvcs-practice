@@ -20,6 +20,21 @@ cd D:\DDP_calculate\ai-appointment-system
 py -3 -m pytest tests -q -p no:cacheprovider
 ```
 
+This command runs:
+
+- Validation tests
+- Backend API tests
+- Model prediction tests
+- Playwright browser test for the appointment form
+
+Install Playwright locally once before running the browser test:
+
+```powershell
+cd D:\DDP_calculate\ai-appointment-system
+py -3 -m pip install -r requirements-dev.txt
+py -3 -m playwright install chromium
+```
+
 ## Measure Time And Build Report
 
 ```powershell

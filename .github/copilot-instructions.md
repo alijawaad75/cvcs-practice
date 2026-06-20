@@ -10,6 +10,8 @@ Minimum verification:
 
 ```powershell
 cd ai-appointment-system
+py -3 -m pip install -r requirements-dev.txt
+py -3 -m playwright install chromium
 py -3 -m pytest tests -q -p no:cacheprovider
 ```
 
@@ -20,4 +22,3 @@ py -3 scripts\measure_tests.py
 ```
 
 Keep unrelated repository files untouched unless the task explicitly asks for them.
-

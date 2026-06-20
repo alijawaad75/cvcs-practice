@@ -38,6 +38,7 @@ def write_reports(process, duration):
             "Shared valid and invalid examples live in test_data/test_data.py",
             "API test uses an in-memory database so tests stay fast and isolated",
             "Model test checks behavior ranges instead of fragile exact internals",
+            "Playwright test verifies the frontend form can book through the backend API",
         ],
     }
 
@@ -67,6 +68,7 @@ def write_reports(process, duration):
 - When the phone rule changes, update rule config plus shared examples first.
 - API tests use an in-memory database, avoiding slow or flaky file writes.
 - Model tests verify expected behavior instead of overfitting to implementation details.
+- Playwright verifies the user-facing appointment form against the backend API.
 
 ## Observation Workflow
 

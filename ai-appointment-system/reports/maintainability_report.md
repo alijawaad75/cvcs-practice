@@ -5,14 +5,14 @@
 | Metric | Value |
 | --- | --- |
 | Status | PASS |
-| Duration | 2.6201 seconds |
+| Duration | 9.6102 seconds |
 | Command | `C:\Users\Ali Jawad\AppData\Local\Programs\Python\Python313\python.exe -m pytest tests -q -p no:cacheprovider` |
 
 ## Pytest Output
 
 ```text
-..........                                                               [100%]
-10 passed in 0.09s
+...........                                                              [100%]
+11 passed in 5.45s
 ```
 
 ## Maintainability Improvement
@@ -22,6 +22,7 @@
 - When the phone rule changes, update rule config plus shared examples first.
 - API tests use an in-memory database, avoiding slow or flaky file writes.
 - Model tests verify expected behavior instead of overfitting to implementation details.
+- Playwright verifies the user-facing appointment form against the backend API.
 
 ## Observation Workflow
 

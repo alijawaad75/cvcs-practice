@@ -13,7 +13,7 @@ The system includes:
 - Name, age, and phone validation
 - Deterministic ML-like attendance prediction
 - JSONL appointment persistence
-- Automated tests and a maintainability report
+- Automated tests, Playwright browser coverage, and a maintainability report
 
 ## Session Workflow
 
@@ -32,6 +32,13 @@ Run from `ai-appointment-system`:
 
 ```powershell
 py -3 -m pytest tests -q -p no:cacheprovider
+```
+
+Install browser test dependencies when needed:
+
+```powershell
+py -3 -m pip install -r requirements-dev.txt
+py -3 -m playwright install chromium
 ```
 
 Generate the maintainability report:
@@ -53,6 +60,7 @@ py -3 backend\app.py
 - Update shared valid and invalid examples in `test_data/test_data.py`.
 - Keep API tests isolated with an in-memory database.
 - Keep model tests behavior-based, not tied to private implementation details.
+- Keep Playwright tests focused on real user flows, not visual styling.
 - Prefer small, readable Python functions over new dependencies.
 
 ## CI/CD
@@ -67,4 +75,3 @@ It runs on changes to this project and uploads:
 - `reports/test_run_result.json`
 
 Do not mark a GitHub task complete until local tests pass or the blocker is clearly reported.
-

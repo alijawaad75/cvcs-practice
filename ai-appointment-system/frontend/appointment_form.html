@@ -73,6 +73,7 @@
     <script>
       const form = document.querySelector("#appointment-form");
       const result = document.querySelector("#result");
+      const apiUrl = window.APPOINTMENT_API_URL || "http://127.0.0.1:8000/appointments";
 
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -84,7 +85,7 @@
           reminder_opt_in: true
         };
 
-        const response = await fetch("http://127.0.0.1:8000/appointments", {
+        const response = await fetch(apiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
@@ -94,4 +95,3 @@
     </script>
   </body>
 </html>
-
