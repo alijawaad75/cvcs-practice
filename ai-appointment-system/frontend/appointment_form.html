@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Appointment System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f6f7fb;
+        color: #172033;
+      }
+      main {
+        max-width: 620px;
+        margin: 48px auto;
+        padding: 28px;
+        background: #ffffff;
+        border: 1px solid #dde2ee;
+        border-radius: 8px;
+      }
+      label {
+        display: block;
+        margin-top: 16px;
+        font-weight: 700;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 6px;
+        padding: 10px;
+        border: 1px solid #bac3d4;
+        border-radius: 6px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 6px;
+        background: #1b6ef3;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      pre {
+        margin-top: 20px;
+        padding: 14px;
+        background: #101828;
+        color: #e6edf7;
+        border-radius: 6px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>AI Appointment System</h1>
+      <form id="appointment-form">
+        <label for="name">Patient name</label>
+        <input id="name" name="name" value="Ali Khan" required />
+
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" value="25" required />
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" value="+923001234567" required />
+
+        <button type="submit">Book appointment</button>
+      </form>
+      <pre id="result">Submit the form to call POST /appointments.</pre>
+    </main>
+
+    <script>
+      const form = document.querySelector("#appointment-form");
+      const result = document.querySelector("#result");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const payload = {
+          name: form.name.value,
+          age: Number(form.age.value),
+          phone: form.phone.value,
+          previous_no_shows: 0,
+          reminder_opt_in: true
+        };
+
+        const response = await fetch("http://127.0.0.1:8000/appointments", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        result.textContent = JSON.stringify(await response.json(), null, 2);
+      });
+    </script>
+  </body>
+</html>
+

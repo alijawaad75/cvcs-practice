@@ -1,0 +1,13 @@
+{
+  "measured_at": "2026-06-20T23:30:17",
+  "duration_seconds": 2.2586,
+  "exit_code": 0,
+  "stdout": "..........                                                               [100%]\n10 passed in 0.04s",
+  "stderr": "",
+  "maintainability_notes": [
+    "Phone rule lives in config/rules.py",
+    "Shared valid and invalid examples live in test_data/test_data.py",
+    "API test uses an in-memory database so tests stay fast and isolated",
+    "Model test checks behavior ranges instead of fragile exact internals"
+  ]
+}
