@@ -1,0 +1,25 @@
+name: Self Hosted AI Runner Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gpu-or-private-network-job:
+    name: Example job for own machine
+    runs-on:
+      - self-hosted
+      - ai-appointment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show runner
+        run: |
+          echo "This job runs only when you register a self-hosted runner with label ai-appointment."
+          python --version
+
+      - name: Run appointment tests
+        working-directory: ai-appointment-system
+        run: python -m pytest tests -q -p no:cacheprovider
+

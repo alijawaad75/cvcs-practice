@@ -1,0 +1,10 @@
+# Code owners for automatic review routing.
+# Replace @alijawaad75 with team handles when the project grows.
+
+* @alijawaad75
+
+/ai-appointment-system/backend/ @alijawaad75
+/ai-appointment-system/frontend/ @alijawaad75
+/ai-appointment-system/tests/ @alijawaad75
+/.github/workflows/ @alijawaad75
+

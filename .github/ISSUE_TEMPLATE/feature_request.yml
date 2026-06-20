@@ -1,0 +1,35 @@
+name: Feature request
+description: Suggest an improvement for the AI Appointment System
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or learning goal
+      placeholder: I want to learn/test/improve...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      placeholder: Add a test/report/API change that...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Project area
+      options:
+        - Frontend
+        - Backend API
+        - Validation
+        - ML model
+        - Automated tests
+        - CI/CD
+        - Documentation
+    validations:
+      required: true
+

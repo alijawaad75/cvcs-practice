@@ -11,6 +11,10 @@ on:
       - ".github/workflows/ai-appointment-system-ci.yml"
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   test:
     name: Run automated tests

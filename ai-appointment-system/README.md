@@ -35,6 +35,22 @@ py -3 -m pip install -r requirements-dev.txt
 py -3 -m playwright install chromium
 ```
 
+## Watch Playwright Work
+
+To see Playwright open a real browser and fill the appointment form:
+
+```powershell
+cd D:\DDP_calculate\ai-appointment-system
+py -3 scripts\demo_playwright_visible.py
+```
+
+Git Bash:
+
+```bash
+cd /d/DDP_calculate/ai-appointment-system
+py -3 scripts/demo_playwright_visible.py
+```
+
 ## Measure Time And Build Report
 
 ```powershell
@@ -71,3 +87,12 @@ Then open `frontend/appointment_form.html` in a browser.
 
 For GitHub/Codex/Copilot agent sessions, use `AGENTS.md` as the project guide.
 It defines the safest workflow, maintainability rules, and required verification commands.
+
+## Professional GitHub Setup
+
+This repo includes CI/CD, CODEOWNERS, issue templates, security scanning workflows,
+release automation, and self-hosted runner examples.
+
+Start here:
+
+- `docs/github-professional-setup.md`
