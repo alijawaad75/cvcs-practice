@@ -37,7 +37,7 @@ jobs:
           zip -r "ai-appointment-system-${{ steps.version.outputs.value }}.zip" ai-appointment-system .github -x "*/__pycache__/*" "*/.pytest_cache/*" "*/database/*"
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.version.outputs.value }}
           name: AI Appointment System ${{ steps.version.outputs.value }}
